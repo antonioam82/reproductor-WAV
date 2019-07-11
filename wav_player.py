@@ -6,16 +6,15 @@ def ns(r):
         r=input("Introduzca solo \'n\' o \'s\' según su opción: ")
     return r
 
-archivos_wav=[]
-lista=os.listdir('/Users/Antonio/AppData/Local/Programs/Python/Python36-32/')
-
-for nombre in lista:
-    if nombre[-4:]==".wav":
-        archivos_wav.append(nombre)
+while True:
+    dire=input("Introduce directorio: ")
+    if os.path.isdir(dire):
+        os.chdir(dire)
+        break
 
 while True:
     file=(input("Introduzca archivo a reproducir: ")+(".wav"))
-    if file in archivos_wav:
+    if file in dire :
         os.system(file)
     else:
         print("No se encontró el archivo",file,"especificado")
