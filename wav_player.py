@@ -1,4 +1,5 @@
 import os
+import wave
 import subprocess
 
 def ns(r):
@@ -15,7 +16,8 @@ while True:
 while True:
     file=(input("Introduzca archivo a reproducir: ")+(".wav"))
     if file in dire :
-        os.system(file)
+        wave.open(file,'rb')
+        Wave_read.close()
     else:
         print("No se encontró el archivo",file,"especificado")
 
