@@ -1,30 +1,33 @@
+  #IMPORTAMOS RECURSOS NECESARIOS.
 import pyaudio  
 import wave  
-
-#define stream chunk   
+   
 chunk = 1024  
 
-#open a wav format music  
-f = wave.open(<dire>,rb")  
-#instantiate PyAudio  
+#ABRIMOS UBICACIÓN DEL AUDIO.  
+f = wave.open(r"C:\Users\Antonio\Documents\grabacion.wav","rb")
+
+#INICIAMOS PyAudio.
 p = pyaudio.PyAudio()  
-#open stream  
+
+#ABRIMOS STREAM
 stream = p.open(format = p.get_format_from_width(f.getsampwidth()),  
                 channels = f.getnchannels(),  
                 rate = f.getframerate(),  
-                output = True)  
-#read data  
+                output = True)
+
+#LEEMOS INFORMACIÓN  
 data = f.readframes(chunk)  
 
-#play stream  
+#REPRODUCIMOS "stream"  
 while data:  
     stream.write(data)  
     data = f.readframes(chunk)  
 
-#stop stream  
+#PARAMOS "stream".  
 stream.stop_stream()  
 stream.close()  
 
-#close PyAudio  
+#FINALIZAMOS PyAudio  
 p.terminate()  
  
