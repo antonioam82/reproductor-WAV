@@ -5,7 +5,7 @@ import wave
 chunk = 1024  
 
 #ABRIMOS UBICACIÓN DEL AUDIO.  
-f = wave.open(r"C:\Users\Antonio\Documents\grabacion.wav","rb")
+f = wave.open(r<UBICACIÓN ARCHIVO>,"rb")
 
 #INICIAMOS PyAudio.
 p = pyaudio.PyAudio()  
