@@ -1,4 +1,4 @@
-  #IMPORTAMOS RECURSOS NECESARIOS.
+#IMPORTAMOS RECURSOS NECESARIOS.
 import pyaudio  
 import wave  
    
@@ -30,4 +30,5 @@ stream.close()
 
 #FINALIZAMOS PyAudio  
 p.terminate()  
+
  
